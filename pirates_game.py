@@ -55,11 +55,11 @@ def main():
 
 # TO CHANGE image
     # Set up the background image.
-    boardImage = pygame.image.load('flippyboard.png')
+    #boardImage = pygame.image.load('flippyboard.png')
     # Use smoothscale() to stretch the board image to fit the central line:
-    boardImage = pygame.transform.smoothscale(boardImage, (EARTHWIDTH * SPACESIZE, EARTHHEIGHT * SPACESIZE))
-    boardImageRect = boardImage.get_rect()
-    boardImageRect.topleft = (XMARGIN, YMARGIN + SPACESIZE)
+    #boardImage = pygame.transform.smoothscale(boardImage, (EARTHWIDTH * SPACESIZE, EARTHHEIGHT * SPACESIZE))
+    #boardImageRect = boardImage.get_rect()
+    #boardImageRect.topleft = (XMARGIN, YMARGIN + SPACESIZE)
 # END TO CHANGE 
     BGIMAGE = pygame.image.load('sea.jpg')
     # Use smoothscale() to stretch the background image to fit the entire window:
@@ -91,11 +91,13 @@ def runGame():
     drawBoard(mainBoard, sailors)
     # ask the player what color they want.
     playerTile, computerTile = enterPlayerTile() #MAYBE I HAVE TO SIMPLIFY
-
+    print("Sale de enterPlayerTile")
     # Make the Surface and Rect objects for the "New Game" and "Hints" buttons
     newGameSurf = FONT.render('New Game', True, TEXTCOLOR, TEXTBGCOLOR2)
     newGameRect = newGameSurf.get_rect()
     newGameRect.topright = (WINDOWWIDTH - 8, 10)
+    print("Surface and Rect objects for the New Game and Hints buttons done")
+
 
     while True: # main game loop
         # Keep looping for player and computer's turns.
